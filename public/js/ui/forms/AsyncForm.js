@@ -13,7 +13,8 @@ class AsyncForm {
    * через registerEvents()
    * */
   constructor( element ) {
-
+    this.element = element;
+    this.registerEvents();
   }
 
   /**
@@ -21,7 +22,11 @@ class AsyncForm {
    * вызывает метод submit()
    * */
   registerEvents() {
-
+    this.element.addEventListener('submit', event =>{
+      event.preventDefault();
+      //this.submit();
+      console.log("111111111");
+    })
   }
 
   /**
@@ -32,6 +37,10 @@ class AsyncForm {
    * }
    * */
   getData() {
+    // const loginData = document.getElementById('login-form');
+    // let logForm = new Form (loginData);
+    // console.log(logForm.getData())
+
 
   }
 
@@ -44,6 +53,6 @@ class AsyncForm {
    * данные, полученные из метода getData()
    * */
   submit() {
-
+    
   }
 }

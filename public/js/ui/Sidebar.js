@@ -24,12 +24,31 @@ class Sidebar {
   /**
    * При нажатии на кнопку входа, показывает окно входа
    * (через найденное в App.getModal)
-   * При нажатии на кнопку регастрации показывает окно регистрации
+   * При нажатии на кнопку регистрации показывает окно регистрации
    * При нажатии на кнопку выхода вызывает User.logout и по успешному
    * выходу устанавливает App.setState( 'init' )
    * */
   static initAuthLinks() {
+    const registerButton = document.querySelector('.menu-item_register');
+    const loginButton = document.querySelector('.menu-item_login');
 
-  }
+
+    registerButton.addEventListener('click', (event)=>{
+      event.preventDefault();
+      const modal = App.getModal('register');
+      modal.open();
+    });
+
+    loginButton.addEventListener('click', (event)=>{
+      event.preventDefault();
+      const modal = App.getModal('login');
+      modal.open();
+    });
+
+
+
+
+   }
+
 
 }
